@@ -3,7 +3,7 @@
 
 
 var img = new Image();
-img.src = "Lunar-Landscape-Apollo-16_a91e5be3-f2ce-4917-ac99-e23fcbcf4071_1024x1024.jpg";
+img.src = "lunarbackdrop.jpg";
 
 var backgroundImage = {
   img: img,

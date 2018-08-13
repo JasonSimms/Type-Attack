@@ -1,7 +1,18 @@
 body{
-    background-color: green;
+    /* background-color: #757780; */
+    background:linear-gradient(#757780,#DBD4D3);
+    text-align: center;
+    font-family: 'Russo One', sans-serif;
 }
-
+.container {
+    margin: auto;
+}
 canvas {
     border: 2px black solid
+}
+button{
+    font-family: 'Russo One', sans-serif;
+    border: 2px solid #D2CCA1;
+    background-color:#387780;
+    padding: 10px 50px;
 }
