@@ -24,6 +24,7 @@ function Component(width, height, color, x, y, speed, char) {
 }
 
 function stop() {
+    boost = 0;
   console.log("game terminated");
   isGameStarted = false;
   clearInterval(interval);
