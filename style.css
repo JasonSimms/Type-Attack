@@ -1,6 +1,7 @@
 body{
     /* background-color: #757780; */
-    background:linear-gradient(#757780,#DBD4D3);
+    /* background:linear-gradient(#757780,#DBD4D3); */
+    background: -webkit-linear-gradient(left, transparent 0%,#757780 50%,transparent 100%);
     text-align: center;
     font-family: 'Russo One', sans-serif;
 }

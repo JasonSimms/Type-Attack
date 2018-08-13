@@ -34,7 +34,7 @@ window.onload = function() {
   document.getElementById("fast").onclick = function() {
     if (!isGameStarted) {
       str = strAlph
-      boost = 2;
+      boost = 20;
       startGame();
       isGameStarted = true;
     }
@@ -47,7 +47,7 @@ window.onload = function() {
     frames = 0;
     score = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    interval = setInterval(updateCanvas, 100);
+    interval = setInterval(updateCanvas, 50);
   }
 
   // GAME DRAWING -----------------------------------------------------------------
@@ -67,7 +67,7 @@ window.onload = function() {
     if (frames > 1 && frames % 30 === 0 && str.length > 0) {
       nextAttack = str[0];
       myObstacles.push(
-        new Component(30, 30, "white", canvas.width - 100, 300, 50+boost, nextAttack)
+        new Component(30, 30, "white", canvas.width - 100, 300, 5+boost, nextAttack)
       );
       str.shift();
     }

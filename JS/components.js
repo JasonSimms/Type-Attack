@@ -1,23 +1,32 @@
 console.log("components loaded");
 
-function Component(width, height, color, x, y, speed, char) {
+function Component(width, height, color, x, y, vx, char) {
   this.width = width;
   this.height = height;
   this.x = x;
   this.y = y;
-  this.speed = speed;
+  this.vx = vx;
   this.char = char;
+  this.vy = 15;
   // ctx = myGameArea.context;
   this.update = function() {
     ctx.fillStyle = "white";
-    ctx.fillRect(this.x - 3, this.y - 27, this.width, this.height);
+    ctx.fillRect(this.x - 3, this.y - 40, this.width+10, this.height+20);
     ctx.fillStyle = "black";
     ctx.font = "50px Georgia";
     ctx.fillText(this.char, this.x, this.y, this.width, this.height);
   };
 
   this.newPos = function() {
-    this.x -= this.speed;
+    this.x -= this.vx;
+    this.y += this.vy;
+    //Gravity
+    this.vy += 0.9;
+
+    //Bottom Boundary Bounce
+    if (this.y >= 450){this.vy*= -0.95;
+    this.vx*=0.8};
+
   };
 }
 
