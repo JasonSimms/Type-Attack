@@ -1,9 +1,7 @@
-// var canvas = document.getElementById("game");
-// var ctx = canvas.getContext("2d");
-
+console.log('Background.js loaded')
 
 var img = new Image();
-img.src = "lunarbackdrop.jpg";
+img.src = "img/lunarbackdrop.jpg";
 
 var backgroundImage = {
   img: img,

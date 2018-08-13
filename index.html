@@ -16,8 +16,8 @@
             <p>Defend your ship against the Space Force!</p>
             <p>Hint:Some new recruit printed the defuse codes on the side of the bombs.</p>
         </div>
-    <div class="content">
-        <div class="controls">
+    <div class="content d-flex flex-row">
+        <div class="controls d-flex flex-column">
             <div class="top-score">Your Top Score: </div>
             <button id="alpha">Alphabet Run</button>
             <button id="debug">Debug</button>
@@ -25,7 +25,7 @@
             <button id="marathon">MARATHON</button>
             <button id="hell">HELL</button>
         </div>
-        <div id="game-board">
+        <div id="game-board" class="col">
             <canvas id="game" width="900" height="500"></canvas>
         </div>
     </div>
@@ -37,8 +37,8 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 <!--Game Items-->
-<script src="gamemodes.js"></script>
-<script src="background.js"></script>
-<script src="components.js"></script>
-<script src="gamelogic.js"></script>
+<script src="/JS/gamemodes.js"></script>
+<script src="/JS/background.js"></script>
+<script src="/JS/components.js"></script>
+<script src="/JS/gamelogic.js"></script>
 </html>

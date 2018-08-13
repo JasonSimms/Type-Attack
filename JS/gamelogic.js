@@ -19,30 +19,24 @@ var boost = 0;
 window.onload = function() {
   document.getElementById("debug").onclick = function() {
     if (!isGameStarted) {
-      console.log("GameStarted");
       str=['d','e','f'];
       startGame();
       isGameStarted = true;
-      console.log(str);
     }
   };
   document.getElementById("alpha").onclick = function() {
     if (!isGameStarted) {
-      console.log("GameStarted");
       str = strAlph
       startGame();
       isGameStarted = true;
-      console.log(str);
     }
   };
   document.getElementById("fast").onclick = function() {
     if (!isGameStarted) {
-      console.log("GameStarted");
       str = strAlph
       boost = 2;
       startGame();
       isGameStarted = true;
-      console.log(str);
     }
   };
 
@@ -52,7 +46,6 @@ window.onload = function() {
     myObstacles = [];
     frames = 0;
     score = 0;
-    console.log('game start')
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     interval = setInterval(updateCanvas, 100);
   }
@@ -61,8 +54,6 @@ window.onload = function() {
   function updateCanvas() {
     frames++;
     document.onkeydown = function(e) {
-      console.log(e.key);
-      // console.log(myObstacles[0])
       if (e.key === myObstacles[0].char) {
         myObstacles.shift();
         score++;
@@ -73,10 +64,10 @@ window.onload = function() {
     //  backgroundImage.move();
     //select next character
     //GENERATE ATTACKERS
-    if (frames > 299 && frames % 300 === 0 && str.length > 0) {
+    if (frames > 1 && frames % 30 === 0 && str.length > 0) {
       nextAttack = str[0];
       myObstacles.push(
-        new Component(30, 30, "white", canvas.width - 100, 300, 2+boost, nextAttack)
+        new Component(30, 30, "white", canvas.width - 100, 300, 50+boost, nextAttack)
       );
       str.shift();
     }
@@ -86,15 +77,11 @@ window.onload = function() {
     }
     // WIN SCENARIO based on empty obstacles and string
     if (myObstacles.length === 0 && str.length === 0) {
-      console.log("Shiny");
       stop();
-
       //Lose scenario based on position x
    } else if
        (myObstacles[0].x <= 200) {
-       console.log("test")
       stop();
-      console.log('loss')
    }
   }
 

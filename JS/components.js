@@ -18,28 +18,17 @@ function Component(width, height, color, x, y, speed, char) {
 
   this.newPos = function() {
     this.x -= this.speed;
-    // this.y += this.speedY;
-    // console.log('newPOs',this.x)
   };
 }
 
 function stop() {
     boost = 0;
-  console.log("game terminated");
   isGameStarted = false;
   clearInterval(interval);
   ctx.font = "40px bold";
   ctx.fillStyle = "red";
-  if (myObstacles.length === 0) {
-    ctx.fillText("Shiny!", 400, 400);
-  } else {
-    ctx.fillText("Gameover! There is no try", 400, 400);
-}
+  if (myObstacles.length === 0) {ctx.fillText("Shiny!", 400, 400);} else {ctx.fillText("Gameover! There is no try", 400, 400);}
 ctx.fillText("Score: " + score, 400, 100);
-  console.log("weiter");
-  if (score > topScore) {
-    topScore = score;
-  }
+  if (score > topScore) {topScore = score;  }
   $('.top-score').html('Your Top Score: '+topScore)
-  console.log('topScore:',topScore)
 }
