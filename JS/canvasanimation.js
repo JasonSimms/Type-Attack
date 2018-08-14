@@ -20,6 +20,7 @@ var strDebug = ["b", "c", "d", "e"];
 function gamePlay() {
   frames++;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
   document.onkeydown = function(e) {
     if (e.key === myObstacles[0].char) {
       myObstacles.shift();
@@ -32,19 +33,11 @@ function gamePlay() {
   //backgroundImage.move();
 
   //GENERATE ATTACKERS
-  if (frames > 1 && frames % 30 === 0 && str.length > 0) {
+  if (frames > 1 && frames % (20-spawnBoost) === 0 && str.length > 0) {
     pop.play();
     nextAttack = str[0];
     myObstacles.push(
-      new Component(
-        30,
-        30,
-        "white",
-        canvas.width - 100,
-        300,
-        5 + boost,
-        nextAttack
-      ) 
+      new Component(30,30,"white", 950,100, (17 + boost),nextAttack) 
     );
     if (!marathonMode) {
       str.shift();
@@ -59,12 +52,12 @@ function gamePlay() {
     myObstacles[i].newPos();
     myObstacles[i].update();
   }
-
+  enemyDraw();
   // WIN SCENARIO based on empty obstacles and string
   if (myObstacles.length === 0 && str.length === 0) {
     stop();
     //Lose scenario based on position x
-  } else if (myObstacles[0].x <= 200) {
+  } else if (myObstacles[0].x <= 75) {
     stop();
   }
 }

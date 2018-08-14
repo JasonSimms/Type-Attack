@@ -1,17 +1,15 @@
 console.log("intro components loaded");
 
 
-
 function intro() {
   ctx.font = "20px Russo One";
-  ctx.fillStyle = "red";
+  ctx.fillStyle = "rgb(204, 6, 6)";
   // IMAGE OF SHIP to be animated;
-  img = new Image();
-  imgScale = 640/480;
-  img.onload = function() {
-    ctx.drawImage(img, -50, 50,150,400);
-  };
-  img.src = '/img/ship1.png';
+  // img = new Image();
+  // img.onload = function() {
+  //   ctx.drawImage(img, -50, 50,150,400);
+  // };
+  // img.src = '/img/ship1.png';
 
   ctx.fillText("Alpha - Do you know the Alphabet? it's like that", 120, 100)
   ctx.fillText("Fast - Are you fast enough?", 120, 150)

@@ -10,7 +10,8 @@ p{
 }
 canvas {
     border: 2px black solid;
-    background-image: url('/img/lunarbackdrop.jpg')
+    background-image: url('/img/lunarShip.jpg');
+    background-size: cover;
 }
 button{
     font-family: 'Russo One', sans-serif;
@@ -25,3 +26,4 @@ button{
 .container{
     margin: 0;
 }
+

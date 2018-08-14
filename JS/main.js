@@ -21,12 +21,13 @@ var frames = 0;
 var score = 0;
 var topScore = 0;
 var boost = 0;
+var spawnBoost = 0;
 var marathonMode = false;
 // SOUNDS
-var hit;
-var start;
-var end;
-var pop;
+hit = new sound("/sounds/lazer.mp3");
+start = new sound("/sounds/laser2.mp3")
+end = new sound("/sounds/gameover.mp3");
+pop = new sound("/sounds/pop.mp3");
 // GAME Should take a string input, if the player presses the correct key
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
@@ -45,17 +46,21 @@ window.onload = function() {
       isGameStarted = true;
     }
   };
-  document.getElementById("alpha").onclick = function() {
+  document.getElementById("easy").onclick = function() {
     if (!isGameStarted) {
-      str = strAlph;
+      str = word.split("").sort(function(a, b) {
+        return 0.5 - Math.random();
+      });
       startGame();
       isGameStarted = true;
     }
   };
   document.getElementById("fast").onclick = function() {
     if (!isGameStarted) {
-      str = strAlph;
-      boost = 17;
+      str = word.split("").sort(function(a, b) {
+        return 0.5 - Math.random()});
+      boost = 5;
+      spawnBoost = 10;
       startGame();
       isGameStarted = true;
     }
@@ -63,9 +68,11 @@ window.onload = function() {
   document.getElementById("marathon").onclick = function() {
     marathonMode = true;
     if (!isGameStarted) {
-      str = strAlph;
+      str = word.split("").sort(function(a, b) {
+        return 0.5 - Math.random()});
       marathonMode = true;
-      boost = 20;
+      boost = 5;
+      spawnBoost = 7;
       startGame();
       isGameStarted = true;
     }
@@ -73,8 +80,11 @@ window.onload = function() {
   document.getElementById("hell").onclick = function() {
     marathonMode = true;
     if (!isGameStarted) {
-      str = strAlph;
-      boost = 20;
+      str = word.split("").sort(function(a, b) {
+        return 0.5 - Math.random()});
+      boost = 10;
+      //spawn boost < 19;
+      spawnBoost = 13;
       startGame();
       isGameStarted = true;
     }
@@ -83,16 +93,13 @@ window.onload = function() {
   function startGame() {
 
     //INITIAL STATE SETTINGS
-    hit = new sound("/sounds/lazer.mp3");
-    start = new sound("/sounds/laser2.mp3")
-    end = new sound("/sounds/gameover.mp3");
-    pop = new sound("/sounds/pop.mp3");
+
 
     start.play();
     myObstacles = [];
     frames = 0;
     score = 0;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(100, 0, canvas.width, canvas.height);
     interval = setInterval(gamePlay, 50);
   }
 
