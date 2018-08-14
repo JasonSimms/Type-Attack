@@ -38,6 +38,8 @@ function Component(width, height, color, x, y, vx, char) {
 }
 
 function stop() {
+  end.play();
+  marathonMode = false;
     boost = 0;
   isGameStarted = false;
   clearInterval(interval);

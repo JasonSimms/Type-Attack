@@ -62,6 +62,8 @@ window.onload = function() {
 
   // START GAME FUNCTION
   function startGame() {
+    start.play();
+
 //INITIAL STATE SETTINGS
     myObstacles = [];
     frames = 0;
