@@ -5,6 +5,9 @@ body{
     text-align: center;
     font-family: 'Russo One', sans-serif;
 }
+p{
+    line-height: 1px;
+}
 canvas {
     border: 2px black solid;
     background-image: url('/img/lunarbackdrop.jpg')

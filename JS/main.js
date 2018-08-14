@@ -26,6 +26,7 @@ var marathonMode = false;
 var hit;
 var start;
 var end;
+var pop;
 // GAME Should take a string input, if the player presses the correct key
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
@@ -85,6 +86,8 @@ window.onload = function() {
     hit = new sound("/sounds/lazer.mp3");
     start = new sound("/sounds/laser2.mp3")
     end = new sound("/sounds/gameover.mp3");
+    pop = new sound("/sounds/pop.mp3");
+
     start.play();
     myObstacles = [];
     frames = 0;

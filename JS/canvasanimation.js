@@ -33,6 +33,7 @@ function gamePlay() {
 
   //GENERATE ATTACKERS
   if (frames > 1 && frames % 30 === 0 && str.length > 0) {
+    pop.play();
     nextAttack = str[0];
     myObstacles.push(
       new Component(
@@ -43,7 +44,7 @@ function gamePlay() {
         300,
         5 + boost,
         nextAttack
-      )
+      ) 
     );
     if (!marathonMode) {
       str.shift();
