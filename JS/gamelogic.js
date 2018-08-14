@@ -1,4 +1,17 @@
+$(window).resize(function() {
+ if ($(window).innerWidth() >= 1150) {
+   $('#controls').removeClass('btn-group');
+   $('#controls').addClass('btn-group-vertical');
+   }else if ($(window).innerWidth() < 1150) {
+   $('#controls').removeClass('btn-group-vertical');
+   $('#controls').addClass('btn-group');
+   }
+  });
+
 console.log("Gamelogic loaded");
+
+
+
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
 
@@ -17,6 +30,9 @@ var boost = 0;
 
 //key entry should shift string
 window.onload = function() {
+      if ($(window).width() > 1100) {
+      $('#controls').toggleClass('btn-group btn-group-vertical');
+      };
   document.getElementById("debug").onclick = function() {
     if (!isGameStarted) {
       str=['d','e','f'];
@@ -47,11 +63,14 @@ window.onload = function() {
     frames = 0;
     score = 0;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    interval = setInterval(updateCanvas, 50);
+    interval = setInterval(gamePlay, 50);
   }
 
+
+
+
   // GAME DRAWING -----------------------------------------------------------------
-  function updateCanvas() {
+  function gamePlay() {
     frames++;
     document.onkeydown = function(e) {
       if (e.key === myObstacles[0].char) {
@@ -60,9 +79,11 @@ window.onload = function() {
       }
     };
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    backgroundImage.draw();
-    //  backgroundImage.move();
-    //select next character
+    
+    //BACKGROUND IMAGE DRAWING AND MOVING NOT NECESSARY WITH CURRENT GAME MODEL;
+    //backgroundImage.draw();
+    //backgroundImage.move();
+
     //GENERATE ATTACKERS
     if (frames > 1 && frames % 30 === 0 && str.length > 0) {
       nextAttack = str[0];

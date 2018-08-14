@@ -5,15 +5,17 @@ body{
     text-align: center;
     font-family: 'Russo One', sans-serif;
 }
-.container {
-    margin: auto;
-}
 canvas {
-    border: 2px black solid
+    border: 2px black solid;
+    background-image: url('/img/lunarbackdrop.jpg')
 }
 button{
     font-family: 'Russo One', sans-serif;
     border: 2px solid #D2CCA1;
     background-color:#387780;
     padding: 10px 50px;
+}
+.col{
+    padding-right: 2px;
+    padding-left: 0;
 }

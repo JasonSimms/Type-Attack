@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Type Attack</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Type Attack</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
     <div class="container">
         <div class="info-bar">
@@ -16,29 +19,32 @@
             <p>Defend your ship against the Space Force!</p>
             <p>Hint:Some new recruit printed the defuse codes on the side of the bombs.</p>
         </div>
-    <div class="content d-flex flex-row">
-        <div class="controls d-flex flex-column">
-            <div class="top-score">Your Top Score: </div>
-            <button id="alpha">Alphabet Run</button>
-            <button id="debug">Debug</button>
-            <button id="fast">Fast</button>
-            <button id="marathon">MARATHON</button>
-            <button id="hell">HELL</button>
-        </div>
-        <div id="game-board" class="col">
-            <canvas id="game" width="900" height="500"></canvas>
+        <div class="content container-fluid row">
+            <div class="row">
+                <div class="controls col">
+                    <div class="top-score">Top Score: </div>
+                    <div class="btn-group" role="group" id="controls" aria-label="Basic example">
+                        <button type="button" id="alpha" class="btn btn-primary">Alpha</button>
+                        <button type="button" id="debug" class="btn btn-secondary">Debug</button>
+                        <button type="button" id="fast" class="btn btn-secondary">Fast</button>
+                        <button class="btn btn-outline-primary btn-lg" id="marathon">MARATHON</button>
+                        <button class="btn btn-outline-primary btn-lg" id="hell">HELL</button>
+                    </div>
+                </div>
+                <div id="game-board" class="col">
+                    <canvas id="game" width="900" height="500"></canvas>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 </body>
 <!--Jquery-->
-<script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 <!--Game Items-->
 <script src="/JS/gamemodes.js"></script>
-<script src="/JS/background.js"></script>
+<!-- <script src="/JS/background.js"></script> -->
 <script src="/JS/components.js"></script>
 <script src="/JS/gamelogic.js"></script>
+
 </html>
