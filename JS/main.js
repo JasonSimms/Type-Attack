@@ -89,6 +89,9 @@ window.onload = function() {
       isGameStarted = true;
     }
   };
+  document.getElementById("reset").onclick = function() {
+      stop();
+  };
   // START GAME FUNCTION
   function startGame() {
 

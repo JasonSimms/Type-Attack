@@ -1,13 +1,13 @@
-console.log("components loaded");
+console.log("Bombs loaded");
 hue = 0;
-function Component(width, height, color, x, y, vx, char) {
+function Bomb(width, height, color, x, y, char) {
   this.width = width;
   this.height = height;
   this.x = x;
   this.y = y;
-  this.vx = vx;
+  this.vx = (16 + boost);
   this.char = char;
-  this.vy = 15 + boost;
+  this.vy = 25+ (boost/20);
   // ctx = myGameArea.context;
   this.update = function() {
     hue = shiftHue(hue);
@@ -38,7 +38,7 @@ function Component(width, height, color, x, y, vx, char) {
 
     //Bottom Boundary Bounce
     if (this.y > 450) {
-      this.vy *= -0.70;
+      this.vy *= -0.7;
       this.vx *= 0.75;
     }
   };
