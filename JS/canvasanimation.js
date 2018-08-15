@@ -37,6 +37,7 @@ function gamePlay() {
     );
   }
   enemyDraw();
+  benderDraw();
   for (var i in myObstacles) {
     myObstacles[i].newPos();
     myObstacles[i].update();

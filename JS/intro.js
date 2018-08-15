@@ -1,19 +1,36 @@
 console.log("intro components loaded");
-
+var xInit = 120;
+var yInit = 300;
+var ySpace = 35;
 
 function intro() {
   ctx.font = "20px Russo One";
   ctx.fillStyle = "rgb(204, 6, 6)";
   // IMAGE OF SHIP to be animated;
+  
   // img = new Image();
   // img.onload = function() {
-  //   ctx.drawImage(img, -50, 50,150,400);
-  // };
-  // img.src = '/img/ship1.png';
-
-  ctx.fillText("Alpha - Do you know the Alphabet? it's like that", 120, 100)
-  ctx.fillText("Fast - Are you fast enough?", 120, 150)
-  ctx.fillText("Marathon - Assault does not end. Get that high score!", 120, 200)
-  ctx.fillText("Hell - As hard as it gets", 120, 250)
-  ctx.fillText("Debug - For lazy people", 120, 300)
-}
+    //   ctx.drawImage(img, 300, 325);
+    // };
+    // img.src = 'img/intro.jpg';
+    
+    // ctx.fillRect(120,70,600,300);
+    // ctx.fillStyle('Grey');
+    img2 = new Image();
+    img2.src = '/img/futurama-spot-light.jpg';
+    img2.onload = function() {
+      ctx.drawImage(img2, 0,0,900,500);
+      };
+    setTimeout(infoDisplay,300)
+      // ctx.clip();
+    }
+    
+    function infoDisplay(){
+      ctx.fillText("Modes:", xInit, yInit + ySpace*-1)
+      ctx.fillText("Alpha - Warmup", xInit, yInit + ySpace)
+      ctx.fillText("Fast - Practice", xInit, yInit + ySpace *2)
+      ctx.fillText("Marathon - Longer you play the faster it is", xInit, yInit + ySpace*3)
+      ctx.fillText("Godly - For Professionals", xInit, yInit + ySpace*4)
+      ctx.fillText("Nerd - Exotic Characters", xInit, yInit + ySpace*5)
+    }  
+      
