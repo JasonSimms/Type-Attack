@@ -21,7 +21,7 @@ function intro() {
     img2.onload = function() {
       ctx.drawImage(img2, 0,0,900,500);
       };
-    setTimeout(infoDisplay,300)
+    setTimeout(infoDisplay,100)
       // ctx.clip();
     }
     
