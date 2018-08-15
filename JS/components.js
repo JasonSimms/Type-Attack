@@ -70,3 +70,44 @@ function stop() {
 function shiftHue(frames) {
   return (1.01*frames + 1) % 360;
 }
+
+
+function spawnBoostAdj(){
+  var step = 30;
+if(score ==step*1){
+  spawnBoost=5
+console.log(spawnBoost)}
+if(score ===step*2){
+  spawnBoost=6
+console.log(spawnBoost)}
+if(score ===step*3){
+  spawnBoost=7
+console.log(spawnBoost)}
+if(score === step*4){
+  spawnBoost=8
+console.log(spawnBoost)}
+if(score === step*5){
+  spawnBoost=9
+console.log(spawnBoost)}
+if(score === step*6){
+  spawnBoost=10
+console.log(spawnBoost)}
+if(score === step*7){
+  spawnBoost=11
+console.log(spawnBoost)}
+if(score === step*8){
+  spawnBoost=12
+console.log(spawnBoost)}
+if(score === step*9){
+  spawnBoost=13
+console.log(spawnBoost)}
+if(score === step*10){
+  spawnBoost=14
+console.log(spawnBoost)}
+if(score === step*11){
+  spawnBoost=15
+console.log(spawnBoost)}
+if(score === step*12){
+  spawnBoost=16
+console.log(spawnBoost)}
+}

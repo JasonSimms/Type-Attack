@@ -71,7 +71,7 @@ window.onload = function() {
     if (!isGameStarted) {
       str = alphabet;
       boost = 5;
-      spawnBoost = 7;
+      spawnBoost = 4;
       startGame();
       isGameStarted = true;
     }

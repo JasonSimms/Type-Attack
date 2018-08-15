@@ -28,6 +28,10 @@ function gamePlay() {
   //backgroundImage.draw();
   //backgroundImage.move();
 
+// MARATHON MODE EDITS --------------------------
+if(marathonMode){spawnBoostAdj()};
+
+
   //GENERATE ATTACKERS
   if (frames > 1 && frames % (20-spawnBoost) === 0 && str.length > 0) {
     pop.play();
