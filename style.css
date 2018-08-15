@@ -26,4 +26,9 @@ button{
 .container{
     margin: 0;
 }
+#footer{
+    color: #393a3f;
+    font-size:16px;
+    font-weight: 100;
+}
 

@@ -36,11 +36,11 @@ function gamePlay() {
       new Bomb(30,30,"white", 900,100,nextAttack) 
     );
   }
+  enemyDraw();
   for (var i in myObstacles) {
     myObstacles[i].newPos();
     myObstacles[i].update();
   }
-  enemyDraw();
   // WIN SCENARIO based on empty obstacles and string
   if (myObstacles.length === 0 && str.length === 0) {
     stop();

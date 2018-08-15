@@ -23,11 +23,11 @@ function enemyDraw() {
     ctx.save();
     ctx.translate(z+510,y);
     img = new Image();
-    img.src = '/img/ship3.png'
+    img.src = 'img/ship3.png'
     ctx.drawImage(img, 0, 0);
   
     img = new Image();
-    img.src = '/img/trumpsheet1.png';
+    img.src = 'img/trumpsheet1.png';
     if (frames % (20 - spawnBoost)
      < 4 && strAlph.length > 0) {
         ctx.drawImage(img,225,0,225,225,80,50,60,60)
