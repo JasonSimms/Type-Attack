@@ -1,3 +1,8 @@
+// A Typing Game by Jason Simms
+// Inception August 12 2018
+// Utilizes Canvas Animations
+
+
 $(window).resize(function() {
   if ($(window).innerWidth() >= 1200) {
     $("#controls").removeClass("btn-group");
@@ -39,26 +44,24 @@ window.onload = function() {
   if ($(window).width() > 1200) {
     $("#controls").toggleClass("btn-group btn-group-vertical");
   }
-  document.getElementById("debug").onclick = function() {
+  document.getElementById("nerd").onclick = function() {
     if (!isGameStarted) {
-      str = ["d", "e", "f"];
+      str = chars;
       startGame();
       isGameStarted = true;
     }
   };
   document.getElementById("easy").onclick = function() {
     if (!isGameStarted) {
-      str = word.split("").sort(function(a, b) {
-        return 0.5 - Math.random();
-      });
+      str = alphabet;
       startGame();
       isGameStarted = true;
     }
   };
   document.getElementById("fast").onclick = function() {
     if (!isGameStarted) {
-      str = word.split("").sort(function(a, b) {
-        return 0.5 - Math.random()});
+      str = alphabet;
+
       boost = 5;
       spawnBoost = 10;
       startGame();
@@ -68,20 +71,17 @@ window.onload = function() {
   document.getElementById("marathon").onclick = function() {
     marathonMode = true;
     if (!isGameStarted) {
-      str = word.split("").sort(function(a, b) {
-        return 0.5 - Math.random()});
-      marathonMode = true;
+      str = alphabet;
       boost = 5;
       spawnBoost = 7;
       startGame();
       isGameStarted = true;
     }
   };
-  document.getElementById("hell").onclick = function() {
-    marathonMode = true;
+  document.getElementById("godly").onclick = function() {
     if (!isGameStarted) {
-      str = word.split("").sort(function(a, b) {
-        return 0.5 - Math.random()});
+      str = alphabet;
+
       boost = 10;
       //spawn boost < 19;
       spawnBoost = 13;

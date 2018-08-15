@@ -28,7 +28,8 @@ function enemyDraw() {
   
     img = new Image();
     img.src = '/img/trumpsheet1.png';
-    if (frames % (20 - spawnBoost) < 4 && strAlph.length > 0) {
+    if (frames % (20 - spawnBoost)
+     < 4 && strAlph.length > 0) {
         ctx.drawImage(img,225,0,225,225,80,50,60,60)
     } else {
         ctx.drawImage(img,0,0,225,225,80,50,60,60)
