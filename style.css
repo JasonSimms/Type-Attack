@@ -10,7 +10,7 @@ p{
 }
 canvas {
     border: 2px black solid;
-    background-image: url('img/lunarShip.jpg');
+    background-image: url('img/lunarBGsmall.jpg');
     background-size: cover;
 }
 button{

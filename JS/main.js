@@ -29,10 +29,10 @@ var boost = 0;
 var spawnBoost = 0;
 var marathonMode = false;
 // SOUNDS
-hit = new sound("/sounds/lazer.mp3");
-start = new sound("/sounds/laser2.mp3")
-end = new sound("/sounds/gameover.mp3");
-pop = new sound("/sounds/pop.mp3");
+hit = new sound("../sounds/lazer.mp3");
+start = new sound("../sounds/laser2.mp3")
+end = new sound("../sounds/gameover.mp3");
+pop = new sound("../sounds/pop.mp3");
 // GAME Should take a string input, if the player presses the correct key
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
