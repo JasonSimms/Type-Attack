@@ -34,12 +34,13 @@ function Bomb(width, height, color, x, y, char) {
     this.x -= this.vx;
     this.y += this.vy;
     //Gravity
-    this.vy += 0.99;
+    this.vy += 1.5;
 
     //Bottom Boundary Bounce
     if (this.y > 450) {
-      this.vy *= -0.7;
-      this.vx *= 0.75;
+      this.vy *= -0.6;
+      this.y= 450
+      // this.vx *= 1;
     }
   };
 }

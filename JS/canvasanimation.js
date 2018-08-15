@@ -37,7 +37,7 @@ if(marathonMode){spawnBoostAdj()};
     pop.play();
     nextAttack = str[Math.floor(Math.random()*str.length)];
     myObstacles.push(
-      new Bomb(30,30,"white", 900,100,nextAttack) 
+      new Bomb(30,30,"white", 900,Math.floor(Math.random()*400),nextAttack) 
     );
   }
   enemyDraw();

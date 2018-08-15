@@ -60,8 +60,8 @@ window.onload = function() {
     if (!isGameStarted) {
       str = alphabet;
 
-      boost = 5;
-      spawnBoost = 10;
+      boost = 4;
+      spawnBoost = 8;
       startGame();
       isGameStarted = true;
     }
@@ -70,7 +70,7 @@ window.onload = function() {
     marathonMode = true;
     if (!isGameStarted) {
       str = alphabet;
-      boost = 5;
+      boost = 4;
       spawnBoost = 4;
       startGame();
       isGameStarted = true;
