@@ -8,7 +8,7 @@ function Bomb(width, height, color, x, y, char) {
   this.vx = (16 + boost);
   this.char = char;
   this.vy = 25+ (boost/20);
-  // ctx = myGameArea.context;
+  // ctx =    myGameArea.context;
   this.update = function() {
     hue = shiftHue(hue);
     var color = "hsl(" + hue + ",100%,50%)";
