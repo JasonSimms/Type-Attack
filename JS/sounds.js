@@ -1,7 +1,7 @@
 // Set default volume
 
 // SOUNDS
-hit = new sound("/sounds/lazer.mp3");
+hit = new sound("sounds/lazer.mp3");
 start = new sound("sounds/laser2.mp3")
 end = new sound("sounds/gameover.mp3");
 pop = new sound("sounds/pop.mp3");

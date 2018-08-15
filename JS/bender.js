@@ -28,7 +28,7 @@ function benderDraw() {
 //   console.log((frames%1400)%7);
     img = new Image();
     img.src = 'img/Bender/benderSprite1.png';
-    ctx.drawImage(img,(frames%11200)%7*300,0,300,250,0,300,240,200)
+    ctx.drawImage(img,(((frames%343)%49)%7)*300,0,300,250,0,300,240,200)
     
   
     // ctx.restore();

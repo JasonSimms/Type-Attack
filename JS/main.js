@@ -28,9 +28,9 @@ var topScore = 0;
 var boost = 0;
 var spawnBoost = 0;
 var marathonMode = false;
-var vid = document.getElementById("myVideo");
-vid.volume = 0.3;
-vid.loop=true;
+// var vid = document.getElementById("myVideo");
+// vid.volume = 0.3;
+// vid.loop=true;
 // GAME Should take a string input, if the player presses the correct key
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
@@ -51,6 +51,8 @@ window.onload = function() {
   };
   document.getElementById("easy").onclick = function() {
     if (!isGameStarted) {
+      boost = -7;
+      spawnBoost = -20;
       str = alphabet;
       startGame();
       isGameStarted = true;

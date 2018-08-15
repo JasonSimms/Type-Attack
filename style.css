@@ -10,8 +10,8 @@ p{
 }
 canvas {
     /* border: 3px black solid; */
-    background-image: url("/img/lunarbgsmall.jpg");
     background-size: cover;
+    background-image: url("img/lunarbgsmall.jpg");
 }
 button{
     font-family: 'Russo One', sans-serif;
