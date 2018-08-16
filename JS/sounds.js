@@ -1,16 +1,25 @@
 // SOUNDS
 introMusic = new sound("http://www.gotfuturama.com/Multimedia/MP3Sounds/FuturamaStartTheme.mp3")
 hit = new sound("sounds/lazer.mp3");
-start = new sound("sounds/Bring it on 2.mp3")
-end = new sound("sounds/8d82b5_Futurama_Bender_Show_Over_Sound_Effect.mp3");
+var starts = ["sounds/Bring it on 2.mp3",
+"sounds/Rumbling.mp3",
+"sounds/8d82b5_Futurama_Bender_Fun_On_A_Bun_Sound_Effect.mp3"]
+
 pop = new sound("sounds/pop.mp3");
+var ends = [
+  "sounds/8d82b5_Futurama_Bender_Show_Over_Sound_Effect.mp3",
+  "sounds/Im tired.mp3",
+  "sounds/Shiny metal ass.mp3"
+];
+
 
 // Cheers are randomly generated on event in Canvas Animation
 var cheers = [
   "sounds/8d82b5_Futurama_Bender_In_Your_Face_Sound_Effect.mp3",
   "sounds/8d82b5_Futurama_Bender_Got_It_Sound_Effect.mp3",
   "sounds/8d82b5_Futurama_Bender_Dream_On_Sound_Effect.mp3",
-  "sounds/8d82b5_Bender_Evil_Laugh_Sound_Effect.mp3",
+  "sounds/8d82b5_Futurama_Bender_No_Thanks_Sound_Effect.mp3",
+  "sounds/8d82b5_Futurama_Bender_Oh_My_God_Sound_Effect.mp3",
   "sounds/8d82b5_Futurama_Bender_Enjoying_It_Sound_Effect.mp3"];
 // Set volume balance
 introMusic.sound.volume=0.05;

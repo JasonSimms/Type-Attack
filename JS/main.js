@@ -42,13 +42,6 @@ window.onload = function() {
   if ($(window).width() > 1200) {
     $("#controls").toggleClass("btn-group btn-group-vertical");
   }
-  document.getElementById("nerd").onclick = function() {
-    if (!isGameStarted) {
-      str = chars;
-      startGame();
-      isGameStarted = true;
-    }
-  };
   document.getElementById("easy").onclick = function() {
     if (!isGameStarted) {
       boost = -7;
@@ -61,7 +54,7 @@ window.onload = function() {
   document.getElementById("fast").onclick = function() {
     if (!isGameStarted) {
       str = alphabet;
-
+      
       boost = 4;
       spawnBoost = 8;
       startGame();
@@ -81,7 +74,7 @@ window.onload = function() {
   document.getElementById("godly").onclick = function() {
     if (!isGameStarted) {
       str = alphabet;
-
+      
       boost = 10;
       //spawn boost < 19;
       spawnBoost = 13;
@@ -89,9 +82,16 @@ window.onload = function() {
       isGameStarted = true;
     }
   };
+  document.getElementById("nerd").onclick = function() {
+    if (!isGameStarted) {
+      str = chars;
+      startGame();
+      isGameStarted = true;
+    }
+  };
   document.getElementById("reset").onclick = function() {
-      stop();
-      outro();
+    stop();
+    outro();
   };
   // START GAME FUNCTION
   function startGame() {
@@ -99,7 +99,8 @@ window.onload = function() {
     //INITIAL STATE SETTINGS
 
 introMusic.stop();
-    start.play();
+start = new sound(starts[Math.floor(Math.random()*starts.length)]);
+start.play();
     myObstacles = [];
     frames = 0;
     score = 0;

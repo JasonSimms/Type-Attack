@@ -41,7 +41,7 @@ ctx.strokeStyle='rgba(219, 84, 97, 0.6)'
 ctx.strokeRect(rectX+(cornerRadius/2), rectY+(cornerRadius/2), rectWidth-cornerRadius, rectHeight-cornerRadius);
 ctx.fillStyle="rgba(215,252,212,0.5)";
 ctx.fillRect(rectX+10, rectY+10, rectWidth-20, rectHeight-20);
-ctx.fillStyle='rgba(219, 84, 97, 0.9)'
+ctx.fillStyle='rgba(219, 84, 97)'
 ctx.font = "40px Russo One";
   // ctx.fillStyle = "#C82333";
     ctx.fillText("Gameover!", textX, textY);

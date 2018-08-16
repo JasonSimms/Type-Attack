@@ -46,6 +46,7 @@ function Bomb(width, height, color, x, y, char) {
 }
 
 function stop() {
+  end = new sound(ends[Math.floor(Math.random()*ends.length)]);
   end.play();
   marathonMode = false;
   boost = 0;
