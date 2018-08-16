@@ -4,6 +4,8 @@ hit = new sound("sounds/lazer.mp3");
 start = new sound("sounds/Bring it on 2.mp3")
 end = new sound("sounds/8d82b5_Futurama_Bender_Show_Over_Sound_Effect.mp3");
 pop = new sound("sounds/pop.mp3");
+
+// Cheers are randomly generated on event in Canvas Animation
 var cheers = [
   "sounds/8d82b5_Futurama_Bender_In_Your_Face_Sound_Effect.mp3",
   "sounds/8d82b5_Futurama_Bender_Got_It_Sound_Effect.mp3",

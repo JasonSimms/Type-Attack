@@ -18,20 +18,20 @@ function intro() {
     // ctx.fillRect(120,70,600,300);
     // ctx.fillStyle('Grey');
     img2 = new Image();
-    img2.src = '/img/futurama-spot-light.jpg';
+    img2.src = 'img/backdrops/gameinfo1.jpg';
     img2.onload = function() {
       ctx.drawImage(img2, 0,0,900,500);
       };
-    setTimeout(infoDisplay,100)
+    //setTimeout(infoDisplay,100)
       // ctx.clip();
     }
     
-    function infoDisplay(){
-      ctx.fillText("Modes:", xInit, yInit + ySpace*-1)
-      ctx.fillText("Alpha - Warmup", xInit, yInit + ySpace)
-      ctx.fillText("Fast - Practice", xInit, yInit + ySpace *2)
-      ctx.fillText("Marathon - Longer you play the faster it is", xInit, yInit + ySpace*3)
-      ctx.fillText("Godly - For Professionals", xInit, yInit + ySpace*4)
-      ctx.fillText("Nerd - Exotic Characters", xInit, yInit + ySpace*5)
-    }  
+    //function infoDisplay(){
+    //  ctx.fillText("Modes:", xInit, yInit + ySpace*-1)
+    //  ctx.fillText("Alpha - Warmup", xInit, yInit + ySpace)
+    //  ctx.fillText("Fast - Practice", xInit, yInit + ySpace *2)
+    //  ctx.fillText("Marathon - Longer you play the faster it is", xInit, yInit + ySpace*3)
+    //  ctx.fillText("Godly - For Professionals", xInit, yInit + ySpace*4)
+    //  ctx.fillText("Nerd - Exotic Characters", xInit, yInit + ySpace*5)
+    //}  
       
