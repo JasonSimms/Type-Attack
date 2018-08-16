@@ -4,7 +4,6 @@ hit = new sound("sounds/lazer.mp3");
 var starts = ["sounds/Bring it on 2.mp3",
 "sounds/Rumbling.mp3",
 "sounds/8d82b5_Futurama_Bender_Fun_On_A_Bun_Sound_Effect.mp3"]
-
 pop = new sound("sounds/pop.mp3");
 var ends = [
   "sounds/8d82b5_Futurama_Bender_Show_Over_Sound_Effect.mp3",

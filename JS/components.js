@@ -5,16 +5,14 @@ function Bomb(width, height, color, x, y, char) {
   this.height = height;
   this.x = x;
   this.y = y;
-  this.vx = (16 + boost);
+  this.vx = 16 + boost;
   this.char = char;
-  this.vy = 25+ (boost/20);
-  // ctx = myGameArea.context;
+  this.vy = 25 + boost / 20;
   this.update = function() {
     hue = shiftHue(hue);
     var color = "hsl(" + hue + ",100%,50%)";
     ctx.fillStyle = "white";
     ctx.fillStyle = color;
-    // ctx.fillRect(this.x - 3, this.y - 40, this.width+10, this.height+20);
     ctx.beginPath();
     ctx.arc(
       this.x + this.width / 2,
@@ -33,20 +31,20 @@ function Bomb(width, height, color, x, y, char) {
   this.newPos = function() {
     this.x -= this.vx;
     this.y += this.vy;
-    //Gravity
+    //Gravity----------------
     this.vy += 1.5;
 
-    //Bottom Boundary Bounce
+    //Bottom Boundary Bounce---------------
     if (this.y > 450) {
       this.vy *= -0.6;
-      this.y= 450
+      this.y = 450;
       // this.vx *= 1;
     }
   };
 }
 
 function stop() {
-  end = new sound(ends[Math.floor(Math.random()*ends.length)]);
+  end = new sound(ends[Math.floor(Math.random() * ends.length)]);
   end.play();
   marathonMode = false;
   boost = 0;
@@ -57,46 +55,57 @@ function stop() {
 }
 
 function shiftHue(frames) {
-  return (1.01*frames + 1) % 360;
+  return (1.01 * frames + 1) % 360;
 }
 
-
-function spawnBoostAdj(){
+function spawnBoostAdj() {
   var step = 20;
-if(score ==step*1){
-  spawnBoost= 4
-console.log(spawnBoost)}
-if(score ===step*2){
-  spawnBoost=5
-console.log(spawnBoost)}
-if(score ===step*3){
-  spawnBoost=6
-console.log(spawnBoost)}
-if(score === step*4){
-  spawnBoost=7
-console.log(spawnBoost)}
-if(score === step*5){
-  spawnBoost=8
-console.log(spawnBoost)}
-if(score === step*6){
-  spawnBoost=9
-console.log(spawnBoost)}
-if(score === step*7){
-  spawnBoost=10
-console.log(spawnBoost)}
-if(score === step*8){
-  spawnBoost=11
-console.log(spawnBoost)}
-if(score === step*9){
-  spawnBoost=12
-console.log(spawnBoost)}
-if(score === step*10){
-  spawnBoost=13
-console.log(spawnBoost)}
-if(score === step*11){
-  spawnBoost=14
-console.log(spawnBoost)}
-if(score === step*12){
-  spawnBoost=15
-console.log(spawnBoost)}
+  if (score == step * 1) {
+    spawnBoost = 4;
+    console.log(spawnBoost);
+  }
+  if (score === step * 2) {
+    spawnBoost = 5;
+    console.log(spawnBoost);
+  }
+  if (score === step * 3) {
+    spawnBoost = 6;
+    console.log(spawnBoost);
+  }
+  if (score === step * 4) {
+    spawnBoost = 7;
+    console.log(spawnBoost);
+  }
+  if (score === step * 5) {
+    spawnBoost = 8;
+    console.log(spawnBoost);
+  }
+  if (score === step * 6) {
+    spawnBoost = 9;
+    console.log(spawnBoost);
+  }
+  if (score === step * 7) {
+    spawnBoost = 10;
+    console.log(spawnBoost);
+  }
+  if (score === step * 8) {
+    spawnBoost = 11;
+    console.log(spawnBoost);
+  }
+  if (score === step * 9) {
+    spawnBoost = 12;
+    console.log(spawnBoost);
+  }
+  if (score === step * 10) {
+    spawnBoost = 13;
+    console.log(spawnBoost);
+  }
+  if (score === step * 11) {
+    spawnBoost = 14;
+    console.log(spawnBoost);
+  }
+  if (score === step * 12) {
+    spawnBoost = 15;
+    console.log(spawnBoost);
+  }
 }

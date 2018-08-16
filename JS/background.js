@@ -1,3 +1,5 @@
+// FILE NOT USED, STATIC BACKGROUND IMPLEMENTED
+// RESERVED FOR FUTURE SCROLLING BACKGROUND IMPLEMENTATION
 console.log('Background.js loaded')
 
 var img = new Image();
