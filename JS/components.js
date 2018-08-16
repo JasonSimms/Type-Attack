@@ -74,41 +74,41 @@ function shiftHue(frames) {
 
 
 function spawnBoostAdj(){
-  var step = 30;
+  var step = 5;
 if(score ==step*1){
   spawnBoost=5
 console.log(spawnBoost)}
 if(score ===step*2){
-  spawnBoost=6
-console.log(spawnBoost)}
-if(score ===step*3){
   spawnBoost=7
 console.log(spawnBoost)}
-if(score === step*4){
-  spawnBoost=8
-console.log(spawnBoost)}
-if(score === step*5){
+if(score ===step*3){
   spawnBoost=9
 console.log(spawnBoost)}
-if(score === step*6){
-  spawnBoost=10
-console.log(spawnBoost)}
-if(score === step*7){
+if(score === step*4){
   spawnBoost=11
 console.log(spawnBoost)}
-if(score === step*8){
-  spawnBoost=12
-console.log(spawnBoost)}
-if(score === step*9){
+if(score === step*5){
   spawnBoost=13
 console.log(spawnBoost)}
-if(score === step*10){
-  spawnBoost=14
-console.log(spawnBoost)}
-if(score === step*11){
+if(score === step*6){
   spawnBoost=15
 console.log(spawnBoost)}
+if(score === step*7){
+  spawnBoost=17
+console.log(spawnBoost)}
+if(score === step*8){
+  spawnBoost=19
+console.log(spawnBoost)}
+if(score === step*9){
+  spawnBoost=21
+console.log(spawnBoost)}
+if(score === step*10){
+  spawnBoost=23
+console.log(spawnBoost)}
+if(score === step*11){
+  spawnBoost=25
+console.log(spawnBoost)}
 if(score === step*12){
-  spawnBoost=16
+  spawnBoost=27
 console.log(spawnBoost)}
 }
