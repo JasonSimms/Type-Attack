@@ -26,7 +26,7 @@ function Bomb(width, height, color, x, y, char) {
     ctx.closePath();
     ctx.fill();
     ctx.fillStyle = "black";
-    ctx.font = "50px Russo One";
+    ctx.font = "50px Play";
     ctx.fillText(this.char, this.x, this.y, this.width, this.height);
   };
 
