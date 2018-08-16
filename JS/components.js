@@ -52,20 +52,7 @@ function stop() {
   spawnBoost = 0;
   isGameStarted = false;
   clearInterval(interval);
-  ctx.font = "40px Russo One";
-  ctx.fillStyle = "#C82333";
-  if (myObstacles.length === 0) {
-    ctx.fillText("Shiny! Try a harder mode", 20, 50);
-
-  } else {
-    //ctx.drawImage(img,450,0,225,225,580,45,80,75)
-    ctx.fillText("Gameover!", 20, 50);
-  }
-  ctx.fillText("Score: " + score, 700, 50);
-  if (score > topScore) {
-    topScore = score;
-  }
-  $(".top-score").html("Your Top Score: " + topScore);
+  outro();
 }
 
 function shiftHue(frames) {
@@ -74,41 +61,41 @@ function shiftHue(frames) {
 
 
 function spawnBoostAdj(){
-  var step = 5;
+  var step = 20;
 if(score ==step*1){
-  spawnBoost=5
+  spawnBoost= 4
 console.log(spawnBoost)}
 if(score ===step*2){
-  spawnBoost=7
+  spawnBoost=5
 console.log(spawnBoost)}
 if(score ===step*3){
-  spawnBoost=9
+  spawnBoost=6
 console.log(spawnBoost)}
 if(score === step*4){
-  spawnBoost=11
+  spawnBoost=7
 console.log(spawnBoost)}
 if(score === step*5){
-  spawnBoost=13
+  spawnBoost=8
 console.log(spawnBoost)}
 if(score === step*6){
-  spawnBoost=15
+  spawnBoost=9
 console.log(spawnBoost)}
 if(score === step*7){
-  spawnBoost=17
+  spawnBoost=10
 console.log(spawnBoost)}
 if(score === step*8){
-  spawnBoost=19
+  spawnBoost=11
 console.log(spawnBoost)}
 if(score === step*9){
-  spawnBoost=21
+  spawnBoost=12
 console.log(spawnBoost)}
 if(score === step*10){
-  spawnBoost=23
+  spawnBoost=13
 console.log(spawnBoost)}
 if(score === step*11){
-  spawnBoost=25
+  spawnBoost=14
 console.log(spawnBoost)}
 if(score === step*12){
-  spawnBoost=27
+  spawnBoost=15
 console.log(spawnBoost)}
 }

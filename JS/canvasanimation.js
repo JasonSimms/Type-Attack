@@ -27,15 +27,13 @@ function gamePlay() {
         cheer.play();}
     }
   };
-  //BACKGROUND IMAGE DRAWING AND MOVING NOT NECESSARY WITH CURRENT GAME MODEL;
-  //backgroundImage.draw();
-  //backgroundImage.move();
+
 
 // MARATHON MODE EDITS --------------------------
 if(marathonMode){spawnBoostAdj()};
 
 
-  //GENERATE ATTACKERS
+//GENERATE ATTACKERS
   if (frames > 1 && frames % (20-spawnBoost) === 0 && str.length > 0) {
     pop.play();
     nextAttack = str[Math.floor(Math.random()*str.length)];
@@ -57,5 +55,3 @@ if(marathonMode){spawnBoostAdj()};
     stop();
   }
 }
-
-function gameInfo() {}

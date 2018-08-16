@@ -72,8 +72,8 @@ window.onload = function() {
     marathonMode = true;
     if (!isGameStarted) {
       str = alphabet;
-      boost = 4;
-      spawnBoost = 4;
+      boost = 3;
+      spawnBoost = 3;
       startGame();
       isGameStarted = true;
     }
@@ -91,6 +91,7 @@ window.onload = function() {
   };
   document.getElementById("reset").onclick = function() {
       stop();
+      outro();
   };
   // START GAME FUNCTION
   function startGame() {
