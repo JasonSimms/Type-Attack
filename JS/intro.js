@@ -4,6 +4,7 @@ var yInit = 300;
 var ySpace = 35;
 
 function intro() {
+  introMusic.play()
   ctx.font = "20px Russo One";
   ctx.fillStyle = "rgb(204, 6, 6)";
   // IMAGE OF SHIP to be animated;

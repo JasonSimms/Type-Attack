@@ -11,7 +11,7 @@ p{
 canvas {
     /* border: 3px black solid; */
     background-size: cover;
-    background-image: url("img/lunarbgsmall.jpg");
+    background-image: url("img/backdrops/lunarbgsmall.jpg");
 }
 button{
     font-family: 'Russo One', sans-serif;

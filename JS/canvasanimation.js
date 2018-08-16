@@ -22,6 +22,9 @@ function gamePlay() {
       myObstacles.shift();
       score++;
       hit.play();
+      if(score%5 === 0){
+        cheer = new sound(cheers[Math.floor(Math.random()*cheers.length)]);
+        cheer.play();}
     }
   };
   //BACKGROUND IMAGE DRAWING AND MOVING NOT NECESSARY WITH CURRENT GAME MODEL;

@@ -97,7 +97,7 @@ window.onload = function() {
 
     //INITIAL STATE SETTINGS
 
-
+introMusic.stop();
     start.play();
     myObstacles = [];
     frames = 0;
