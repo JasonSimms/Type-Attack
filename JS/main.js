@@ -88,6 +88,7 @@ window.onload = function() {
     //INITIAL STATE SETTINGS
     introMusic.stop();
     start = new sound(starts[Math.floor(Math.random() * starts.length)]);
+    // start.sound.volume=0.9;
     start.play();
     myObstacles = [];
     frames = 0;

@@ -15,6 +15,7 @@ function gamePlay() {
       hit.play();
       if(score%5 === 0){
         cheer = new sound(cheers[Math.floor(Math.random()*cheers.length)]);
+        cheer.sound.volume=1;
         cheer.play();}
     }
   };
