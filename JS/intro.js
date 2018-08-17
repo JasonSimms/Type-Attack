@@ -1,4 +1,3 @@
-console.log("intro components loaded");
 var xInit = 120;
 var yInit = 300;
 var ySpace = 35;
