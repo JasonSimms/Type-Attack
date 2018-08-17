@@ -28,9 +28,9 @@ var topScore = 0;
 var boost = 0;
 var spawnBoost = 0;
 var marathonMode = false;
+intro();
 
 window.onload = function() {
-  intro();
   if ($(window).width() > 1200) {
     $("#controls").toggleClass("btn-group btn-group-vertical");
   }
