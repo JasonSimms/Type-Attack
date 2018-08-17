@@ -24,8 +24,7 @@ function intro() {
 //}
 
 function outro() {
-  setTimeout(introMusic.play2(),5000);
-  setTimeout(console.log('now'),10000);
+  setTimeout(introMusic.play2(),3000);
 
   var rectX = 200;
   var rectY = 50;

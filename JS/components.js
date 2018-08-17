@@ -1,4 +1,3 @@
-console.log("Bombs loaded");
 hue = 0;
 function Bomb(width, height, color, x, y, char) {
   this.width = width;

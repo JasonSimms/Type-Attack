@@ -26,7 +26,7 @@ if(marathonMode){spawnBoostAdj()};
 
 
 //GENERATE ATTACKERS ----------------------------------
-  if (frames > 1 && frames % (20-spawnBoost) === 0 && str.length > 0) {
+  if (frames > 20 && frames % (20-spawnBoost) === 0 && str.length > 0) {
     pop.play();
     nextAttack = str[Math.floor(Math.random()*str.length)];
     myObstacles.push(
