@@ -22,7 +22,7 @@ var cheers = [
   "sounds/8d82b5_Futurama_Bender_Oh_My_God_Sound_Effect.mp3",
   "sounds/8d82b5_Futurama_Bender_Enjoying_It_Sound_Effect.mp3"];
 // Set volume balance
-introMusic.sound.volume=0.18;
+introMusic.sound.volume=0.15;
 hit.sound.volume=0.25;
 // start.sound.volume=0.9;
 // end.sound.volume=1;
