@@ -1,8 +1,10 @@
+console.log("intro components loaded");
 var xInit = 120;
 var yInit = 300;
 var ySpace = 35;
 
 function intro() {
+  introMusic.sound.volume = 0.12;
   introMusic.play();
   ctx.font = "20px Russo One";
   ctx.fillStyle = "rgb(204, 6, 6)";
@@ -23,7 +25,7 @@ function intro() {
 //}
 
 function outro() {
-  setTimeout(introMusic.play2(),3000);
+  setTimeout(introMusic.play(),3000);
 
   var rectX = 200;
   var rectY = 50;

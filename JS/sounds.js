@@ -1,5 +1,6 @@
 // SOUNDS
 introMusic = new sound("sounds/FuturamaStartTheme.mp3")
+// introMusic.sound.volume = 0.01;
 hit = new sound("sounds/lazer.mp3");
 var starts = ["sounds/Bring it on 2.mp3",
 "sounds/This place has class.mp3",

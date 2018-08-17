@@ -28,6 +28,7 @@ var topScore = 0;
 var boost = 0;
 var spawnBoost = 0;
 var marathonMode = false;
+introMusic = new sound("sounds/FuturamaStartTheme.mp3")
 intro();
 
 window.onload = function() {
