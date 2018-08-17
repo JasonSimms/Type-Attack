@@ -56,5 +56,6 @@ function outro() {
   if (score > topScore) {
     topScore = score;
   }
+  localStorage.setItem("topScore", topScore)
   $(".top-score").html("Your Top Score: " + topScore);
 }
