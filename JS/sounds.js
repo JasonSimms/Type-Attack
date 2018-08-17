@@ -1,7 +1,8 @@
 // SOUNDS
-introMusic = new sound("http://www.gotfuturama.com/Multimedia/MP3Sounds/FuturamaStartTheme.mp3")
+introMusic = new sound("sounds/FuturamaStartTheme.mp3")
 hit = new sound("sounds/lazer.mp3");
 var starts = ["sounds/Bring it on 2.mp3",
+"sounds/This place has class.mp3",
 // "sounds/Rumbling.mp3",
 "sounds/8d82b5_Futurama_Bender_Fun_On_A_Bun_Sound_Effect.mp3"]
 pop = new sound("sounds/pop.mp3");
@@ -23,7 +24,7 @@ var cheers = [
 // Set volume balance
 introMusic.sound.volume=0.18;
 hit.sound.volume=0.25;
-start.sound.volume=0.9;
+// start.sound.volume=0.9;
 // end.sound.volume=1;
 pop.sound.volume=0.5;
 // cheer.sound.volume=0.8;
