@@ -37,7 +37,7 @@ window.onload = function() {
   }
   document.getElementById("easy").onclick = function() {
     if (!isGameStarted) {
-      boost = -7;
+      boost = -12;
       spawnBoost = -20;
       str = alphabet;
       startGame();
@@ -98,4 +98,21 @@ window.onload = function() {
     interval = setInterval(gamePlay, 50);
   }
 //END OF ON LOAD--------------
+
+//work around for gamestart
+document.body.onkeyup = function(e) {
+  if (e.key == " " ||
+      e.code == "Space" ||      
+      e.keyCode == 32      
+  ) {
+    console.log('started with start button')
+    if (!isGameStarted) {
+      boost = -14;
+      spawnBoost = -20;
+      str = alphabet;
+      startGame();
+      isGameStarted = true;
+    }
+  }
+}
 };

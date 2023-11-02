@@ -1,7 +1,8 @@
 // Here are input strings for gameplay various modes
 strAlph = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+old_alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 chars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+","|","?","_",";",":","[", "]", "{", "}", "'", "/", ",", ".", "<", ">"]
+alphabet = ["A","U","D","R","E","Y","B","N","T"]
 // Debug mode
 var strDebug = ["b", "c", "d", "e"];
 
