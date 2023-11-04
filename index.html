@@ -19,28 +19,12 @@
             <div class="row">
                 <div class="controls col">
                     <div class="top-score">Top Score: </div>
-                    <div class="btn-group" role="group" id="controls" aria-label="Basic example">
+                    <div class="btn-group-vertical" role="group" id="controls" aria-label="Basic example">
                         <button type="button" id="easy" class="btn btn-primary">WARM UP</button>
                         <button type="button" id="fast" class="btn-primary">FAST</button>
                         <button class="btn btn-primary" id="marathon">MARATHON</button>
                         <button class="btn btn-danger" id="godly">GODLY</button>
                         <button type="button" id="nerd" class="btn btn-warning">NERD</button>
-                        <div class="btn btn-secondary">
-                            <div>
-                                <label for="velocityInput">Velocity:</label>
-                                <input type="number" id="velocityInput" name="velocityInput" value="4">
-                            </div>
-                            <div>
-                                <label for="frequencyInput">Frequency:</label>
-                                <input type="number" id="frequencyInput" name="frequencyInput" value="8">
-                            </div>
-                            <div>
-                                <label for="textInput">Letters:</label>
-                                <input type="text" id="textInput" name="textInput" placeholder="Enter text here">
-                            </div>
-                            <button type="button" id="custom" class="btn btn-warning">CUSTOM PLAY</button>
-
-                        </div>
                         <button type="button" id="reset" class="btn btn-secondary">RESET</button>
                     </div>
                     <img src="img/toad/hypnoToad.gif" alt="hypnoToad" style="width:200px;height:150px;">
@@ -49,6 +33,24 @@
                     <canvas id="game" width="900" height="500"></canvas>
                 </div>
             </div>
+        <p>**Space Bar will start the custom game.**</p>
+
+            <div id="customModeDiv" class="btn btn-secondary" >
+                <div style="display: inline-block;">
+                    <label for="velocityInput">Velocity:</label>
+                    <input type="number" id="velocityInput" name="velocityInput" value="-12" style="width: 50px;">
+                </div>
+                <div style="display: inline-block;">
+                    <label for="frequencyInput">Frequency:</label>
+                    <input type="number" id="frequencyInput" name="frequencyInput" value="-20" style="width: 50px;">
+                </div>
+                <div>
+                    <label for="textInput">Letters:</label>
+                    <input type="text" id="textInput" name="textInput" placeholder="Enter text here" style="width: 200px;">
+                </div>
+                <button type="button" id="custom" class="btn btn-warning">CUSTOM PLAY</button>
+            </div>
+            <br/>
         </div>
         <footer id="footer">
             A Canvas Javascript game by Jason Simms produced August 2018 with the help of Ironhack Berlin.

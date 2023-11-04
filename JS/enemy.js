@@ -5,6 +5,7 @@ var vz = 3;
 var vy = 1;
 var enemyRight = false;
 var enemyBottom = false;
+
 function enemyDraw(frequency) {
     console.log('enemyDraw sees:', frequency)
     if (z >= run) { enemyRight = true };

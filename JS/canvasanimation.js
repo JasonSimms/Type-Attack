@@ -23,7 +23,7 @@ function gamePlay(speed, frequency, enemies) {
   if (marathonMode) { frequency = spawnFrquencyAdjust() };
 
   //GENERATE ATTACKERS ----------------------------------
-  if (frames > 20 && frames % (20 - frequency) === 0) {
+  if (frames > 20 && frames % (20 - frequency) === 0) { //20 frame delay before starting
     pop.play();
     nextAttack = enemies[Math.floor(Math.random() * enemies.length)];
     myObstacles.push(

@@ -1,14 +1,12 @@
 // A Typing Game by Jason Simms
 // Inception August 12 2018
 // Utilizes Canvas Animations
-// GAME Should take a string input, if the player presses the correct key
-// the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
-$(window).resize(function () {
-  const isLargeScreen = $(window).innerWidth() >= 1200;
-  $("#controls").toggleClass("btn-group-vertical", isLargeScreen);
-  $("#controls").toggleClass("btn-group", !isLargeScreen);
-});
+// $(window).resize(function () {
+//   const isLargeScreen = $(window).innerWidth() >= 1200;
+//   $("#controls").toggleClass("btn-group-vertical", isLargeScreen);
+//   $("#controls").toggleClass("btn-group", !isLargeScreen);
+// });
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
@@ -61,11 +59,15 @@ document.getElementById("custom").onclick = () => {
   handleDifficultyClick(customVelocity, customFrequency, customCharacters);
 };
 
-
+//AUTO START THE GAME ON SPACE BAR FOR THE KIDS
 document.body.onkeyup = function (e) {
   if (e.key === " " || e.code === "Space" || e.keyCode === 32) {
     if (!isGameStarted) {
-      handleDifficultyClick(-14, 20);
+      const customGameSettings = getFormValues();
+      const customVelocity = parseFloat(customGameSettings['userVelocity']);
+      const customFrequency = parseFloat(customGameSettings['userFrequency']);
+      const customCharacters =  customGameSettings['userCharacters']
+      handleDifficultyClick(customVelocity, customFrequency, customCharacters);
     }
   }
 };

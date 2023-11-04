@@ -31,3 +31,10 @@ button{
     font-size:16px;
     font-weight: 100;
 }
+.customModeDiv{
+   width: auto;
+   padding-bottom: 200px;
+}
+label{
+    font-size:10px;
+}
