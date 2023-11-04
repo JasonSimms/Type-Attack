@@ -1,5 +1,5 @@
 hue = 0;
-function Bomb(width, height, color, x, y, char) {
+function Bomb(width, height, color, x, y, char, boost) {
   this.width = width;
   this.height = height;
   this.x = x;

@@ -5,7 +5,7 @@
 // // Debug mode
 // var strDebug = ["b", "c", "d", "e"];
 
-function gamePlay(enemies, speed, spawnBoost) {
+function gamePlay(speed, spawnBoost, enemies) {
   const standardAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   !enemies ? enemies = standardAlphabet : null;
 
@@ -35,10 +35,10 @@ function gamePlay(enemies, speed, spawnBoost) {
     pop.play();
     nextAttack = enemies[Math.floor(Math.random() * enemies.length)];
     myObstacles.push(
-      new Bomb(30, 30, "white", 900, Math.floor(Math.random() * 400), nextAttack)
+      new Bomb(30, 30, "white", 900, Math.floor(Math.random() * 400), nextAttack, speed)
     );
   }
-  enemyDraw();
+  enemyDraw(spawnBoost);
   benderDraw();
   drawScoreboard();
   for (var i in myObstacles) {

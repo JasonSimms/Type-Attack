@@ -5,7 +5,7 @@ var vz = 3;
 var vy = 1;
 var enemyRight = false;
 var enemyBottom = false;
-function enemyDraw() {
+function enemyDraw(spawnBoost) {
     if (z >= run) { enemyRight = true };
     if (z <= 0) { enemyRight = false };
     if (enemyRight) {

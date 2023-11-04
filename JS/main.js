@@ -4,108 +4,57 @@
 // GAME Should take a string input, if the player presses the correct key
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
-
 $(window).resize(function () {
-  if ($(window).innerWidth() >= 1200) {
-    $("#controls").removeClass("btn-group");
-    $("#controls").addClass("btn-group-vertical");
-  } else if ($(window).innerWidth() < 1200) {
-    $("#controls").removeClass("btn-group-vertical");
-    $("#controls").addClass("btn-group");
-  }
+  const isLargeScreen = $(window).innerWidth() >= 1200;
+  $("#controls").toggleClass("btn-group-vertical", isLargeScreen);
+  $("#controls").toggleClass("btn-group", !isLargeScreen);
 });
 
-var canvas = document.getElementById("game");
-var ctx = canvas.getContext("2d");
-var isGameStarted = false;
-var myObstacles = [];
-var frames = 0;
-var score = 0;
-var topScore = 0;
-var marathonMode = false;
-introMusic = new sound("sounds/FuturamaStartTheme.mp3")
+const canvas = document.getElementById("game");
+const ctx = canvas.getContext("2d");
+let isGameStarted = false;
+let myObstacles = [];
+let frames = 0;
+let score = 0;
+let topScore = 0;
+let marathonMode = false;
+const introMusic = new sound("sounds/FuturamaStartTheme.mp3");
+
 intro();
 
-window.onload = function () {
-  if ($(window).width() > 1200) {
-    $("#controls").toggleClass("btn-group btn-group-vertical");
-  }
-  document.getElementById("easy").onclick = function () {
-    if (!isGameStarted) {
-      boost = -12;
-      spawnBoost = -20;
-      startGame(null, boost, spawnBoost);
-      isGameStarted = true;
-    }
-  };
-  document.getElementById("fast").onclick = function () {
-    if (!isGameStarted) {
-      boost = 4;
-      spawnBoost = 8;
-      startGame(null, boost, spawnBoost);
-      isGameStarted = true;
-    }
-  };
-  document.getElementById("marathon").onclick = function () {
-    marathonMode = true;
-    if (!isGameStarted) {
-      boost = 3;
-      spawnBoost = 3;
-      startGame(null, boost, spawnBoost);
-      isGameStarted = true;
-    }
-  };
-  document.getElementById("godly").onclick = function () {
-    if (!isGameStarted) {
-      boost = 10;
-      //spawn boost < 19;
-      spawnBoost = 13;
-      startGame(null, boost, spawnBoost);
-      isGameStarted = true;
-    }
-  };
-  document.getElementById("nerd").onclick = function () {
-    if (!isGameStarted) {
-      const customCharacterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+","|","?","_",";",":","[", "]", "{", "}", "'", "/", ",", ".", "<", ">"];
-      boost = 3;
-      spawnBoost = 3;
-      startGame(customCharacterArray, boost, spawnBoost);
-      isGameStarted = true;
-    }
-  };
-  document.getElementById("reset").onclick = function () {
-    stop();
-  };
+function startGame(speed, spawnSpeed, enemies) {
+  introMusic.stop();
+  const randomStartSound = starts[Math.floor(Math.random() * starts.length)];
+  start = new sound(randomStartSound);
+  start.play();
+  myObstacles = [];
+  frames = 0;
+  score = 0;
+  ctx.clearRect(100, 0, canvas.width, canvas.height);
+  interval = setInterval(() => gamePlay(speed, spawnSpeed, enemies), 50);
+}
 
-  // START GAME FUNCTION----------------
-  function startGame(enemies, speed, spawnSpeed) {
-    //INITIAL STATE SETTINGS
-    introMusic.stop();
-    start = new sound(starts[Math.floor(Math.random() * starts.length)]); //picks a random inital sound
-    // start.sound.volume=0.9;
-    start.play();
-    myObstacles = [];
-    frames = 0;
-    score = 0;
-    ctx.clearRect(100, 0, canvas.width, canvas.height);
-    interval = setInterval(() => gamePlay(enemies, speed, spawnSpeed), 50);
-  }
-  //END OF ON LOAD--------------
-
-  //work around for gamestart
-  document.body.onkeyup = function (e) {
-    if (e.key == " " ||
-      e.code == "Space" ||
-      e.keyCode == 32
-    ) {
-      console.log('started with start button')
-      if (!isGameStarted) {
-        boost = -14;
-        spawnBoost = -20;
-        str = alphabet;
-        startGame();
-        isGameStarted = true;
+function handleDifficultyClick(boost, spawnBoost, customCharacterArray) {
+  if (!isGameStarted) {
+      if (marathonMode) {
+          marathonMode = false;
       }
-    }
+      startGame(boost, spawnBoost, customCharacterArray);
+      isGameStarted = true;
+  }
+}
+
+document.getElementById("easy").onclick = () => handleDifficultyClick(-12, -20, null);
+document.getElementById("fast").onclick = () => handleDifficultyClick(4, 8, null);
+document.getElementById("marathon").onclick = () => handleDifficultyClick(3, 3, null);
+document.getElementById("godly").onclick = () => handleDifficultyClick(10, 13, null);
+document.getElementById("nerd").onclick = () => handleDifficultyClick(3, 3, ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "|", "?", "_", ";", ":", "[", "]", "{", "}", "'", "/", ",", ".", "<", ">"]);
+document.getElementById("reset").onclick = stop;
+
+document.body.onkeyup = function (e) {
+  if (e.key === " " || e.code === "Space" || e.keyCode === 32) {
+      if (!isGameStarted) {
+          handleDifficultyClick(-14, -20);
+      }
   }
 };
