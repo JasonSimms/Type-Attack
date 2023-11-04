@@ -1,12 +1,12 @@
-function gamePlay(speed, spawnFrequency, enemies) {
+function gamePlay(speed, frequency, enemies) {
   const standardAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   !enemies ? enemies = standardAlphabet : null;
 
-  frames == 0 ? console.log('GamePLay!!', enemies, speed, spawnFrequency) : null
+  frames == 0 ? console.log('GamePLay!!', enemies, speed, frequency) : null
   frames++;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   document.onkeydown = function (e) {
-    if (e.which === myObstacles[0].char.charCodeAt(0) || e.key === myObstacles[0].char) {
+    if (e.key === myObstacles[0].char.charCodeAt(0) || e.key === myObstacles[0].char) {
       myObstacles.shift();
       score++;
       hit.play();
@@ -20,17 +20,17 @@ function gamePlay(speed, spawnFrequency, enemies) {
 
 
   // MARATHON MODE starts slower than fast but increases spawning speed with every 20pts.
-  if (marathonMode) { spawnFrequency = spawnFrquencyAdjust() };
+  if (marathonMode) { frequency = spawnFrquencyAdjust() };
 
   //GENERATE ATTACKERS ----------------------------------
-  if (frames > 20 && frames % (20 - spawnFrequency) === 0) {
+  if (frames > 20 && frames % (20 - frequency) === 0) {
     pop.play();
     nextAttack = enemies[Math.floor(Math.random() * enemies.length)];
     myObstacles.push(
       new Bomb(30, 30, "white", 900, Math.floor(Math.random() * 400), nextAttack, speed)
     );
   }
-  enemyDraw(spawnFrequency);
+  enemyDraw(frequency);
   benderDraw();
   drawScoreboard();
   for (var i in myObstacles) {

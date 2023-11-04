@@ -23,6 +23,7 @@ const introMusic = new sound("sounds/FuturamaStartTheme.mp3");
 intro();
 
 function startGame(speed, spawnFrequency, enemies) {
+  console.log('start game started with : speed:', speed, "spawn freq: ", spawnFrequency)
   introMusic.stop();
   const randomStartSound = starts[Math.floor(Math.random() * starts.length)];
   start = new sound(randomStartSound);
@@ -51,6 +52,15 @@ document.getElementById("marathon").onclick = () => {
 document.getElementById("godly").onclick = () => handleDifficultyClick(10, 13, null);
 document.getElementById("nerd").onclick = () => handleDifficultyClick(3, 3, ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+", "|", "?", "_", ";", ":", "[", "]", "{", "}", "'", "/", ",", ".", "<", ">"]);
 document.getElementById("reset").onclick = stop;
+document.getElementById("custom").onclick = () => {
+  const customGameSettings = getFormValues();
+  // handleDifficultyClick(4, 8, null)
+  const customVelocity = parseFloat(customGameSettings['userVelocity']);
+  const customFrequency = parseFloat(customGameSettings['userFrequency']);
+  const customCharacters =  customGameSettings['userCharacters']
+  handleDifficultyClick(customVelocity, customFrequency, customCharacters);
+};
+
 
 document.body.onkeyup = function (e) {
   if (e.key === " " || e.code === "Space" || e.keyCode === 32) {
@@ -59,3 +69,25 @@ document.body.onkeyup = function (e) {
     }
   }
 };
+
+
+function getFormValues() {
+  function getUniqueLowercaseLetters(inputString) {
+    if(!inputString) return null;
+    const cleanedString = inputString.replace(/\s/g, '').toLowerCase();
+    const uniqueLettersSet = new Set(cleanedString);
+    return [...uniqueLettersSet];
+  }
+
+  const userVelocity = document.getElementById('velocityInput').value;
+  const userFrequency = document.getElementById('frequencyInput').value;
+  const userString = document.getElementById('textInput').value;
+
+  const userCharacters = getUniqueLowercaseLetters(userString); //remove spaces and duplicates and make lower case
+
+  return {
+    userVelocity: userVelocity,
+    userFrequency: userFrequency,
+    userCharacters: userCharacters
+  };
+}

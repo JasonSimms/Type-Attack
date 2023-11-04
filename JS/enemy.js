@@ -5,35 +5,36 @@ var vz = 3;
 var vy = 1;
 var enemyRight = false;
 var enemyBottom = false;
-function enemyDraw(spawnFrequency) {
-    if (z >= run){enemyRight=true};
-    if (z <= 0){enemyRight=false};
-    if(enemyRight){
-        z-= vz;
-    }else{
-        z+= vz;
+function enemyDraw(frequency) {
+    console.log('enemyDraw sees:', frequency)
+    if (z >= run) { enemyRight = true };
+    if (z <= 0) { enemyRight = false };
+    if (enemyRight) {
+        z -= vz;
+    } else {
+        z += vz;
     };
-    if (y >= run/2){enemyBottom = true};
-    if (y <= 0){enemyBottom = false};
-    if(enemyBottom){
-        y-= vy;
-    }else{
-        y+= vy;
+    if (y >= run / 2) { enemyBottom = true };
+    if (y <= 0) { enemyBottom = false };
+    if (enemyBottom) {
+        y -= vy;
+    } else {
+        y += vy;
     }
     ctx.save();
-    ctx.translate(z+510,y);
+    ctx.translate(z + 510, y);
     img = new Image();
     img.src = 'img/ship3.png'
     ctx.drawImage(img, 0, 0);
-  
+
     img = new Image();
     img.src = 'img/trumpsheet1.png';
     ctx.globalAlpha = 0.7;
-    if (frames % (20 - spawnFrequency)
-     < 4 && frames > 20) {
-        ctx.drawImage(img,225,0,225,225,80,50,60,60)
+    if (frames % (20 - frequency)  //Animate trump on bomb launch
+        < 4 && frames > 20) {
+        ctx.drawImage(img, 225, 0, 225, 225, 80, 50, 60, 60)
     } else {
-        ctx.drawImage(img,0,0,225,225,80,50,60,60)
+        ctx.drawImage(img, 0, 0, 225, 225, 80, 50, 60, 60)
     }
     ctx.restore();
 }
