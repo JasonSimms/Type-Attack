@@ -36,6 +36,7 @@ if(marathonMode){spawnBoostAdj()};
   }
   enemyDraw();
   benderDraw();
+  drawScoreboard();
   for (var i in myObstacles) {
     myObstacles[i].newPos();
     myObstacles[i].update();

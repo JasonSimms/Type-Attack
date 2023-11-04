@@ -59,3 +59,10 @@ function outro() {
   localStorage.setItem("topScore", topScore)
   $(".top-score").html("Your Top Score: " + topScore);
 }
+
+function drawScoreboard(){
+    ctx.font = "24px Arial";
+    ctx.fillStyle = "green";
+    ctx.fillText("Score: " + score, 10, 30);
+ 
+}
