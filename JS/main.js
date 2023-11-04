@@ -2,11 +2,11 @@
 // Inception August 12 2018
 // Utilizes Canvas Animations
 //  when y = canvas height GAME OVER.
-// $(window).resize(function () {
-//   const isLargeScreen = $(window).innerWidth() >= 1200;
-//   $("#controls").toggleClass("btn-group-vertical", isLargeScreen);
-//   $("#controls").toggleClass("btn-group", !isLargeScreen);
-// });
+$(window).resize(function () {
+  const isLargeScreen = $(window).innerWidth() >= 1200;
+  $("#controls").toggleClass("btn-group-vertical", isLargeScreen);
+  $("#controls").toggleClass("btn-group", !isLargeScreen);
+});
 
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
