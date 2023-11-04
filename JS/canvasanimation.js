@@ -1,16 +1,8 @@
-// // Here are input strings for gameplay various modes
-// old_alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-// chars = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+","|","?","_",";",":","[", "]", "{", "}", "'", "/", ",", ".", "<", ">"]
-// alphabet = ["A","U","D","R","E","Y","B","N","T"]
-// // Debug mode
-// var strDebug = ["b", "c", "d", "e"];
-
-function gamePlay(speed, spawnBoost, enemies) {
+function gamePlay(speed, spawnFrequency, enemies) {
   const standardAlphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
   !enemies ? enemies = standardAlphabet : null;
 
-  frames == 0 ? console.log('GamePLay!!', enemies, speed, spawnBoost) : null
-  // console.log('GamePLay!!', enemies, speed, spawnBoost)
+  frames == 0 ? console.log('GamePLay!!', enemies, speed, spawnFrequency) : null
   frames++;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
   document.onkeydown = function (e) {
@@ -27,18 +19,18 @@ function gamePlay(speed, spawnBoost, enemies) {
   };
 
 
-  // MARATHON MODE EDITS --------------------------
-  if (marathonMode) { spawnBoostAdj() };
+  // MARATHON MODE starts slower than fast but increases spawning speed with every 20pts.
+  if (marathonMode) { spawnFrequency = spawnFrquencyAdjust() };
 
   //GENERATE ATTACKERS ----------------------------------
-  if (frames > 20 && frames % (20 - spawnBoost) === 0) {
+  if (frames > 20 && frames % (20 - spawnFrequency) === 0) {
     pop.play();
     nextAttack = enemies[Math.floor(Math.random() * enemies.length)];
     myObstacles.push(
       new Bomb(30, 30, "white", 900, Math.floor(Math.random() * 400), nextAttack, speed)
     );
   }
-  enemyDraw(spawnBoost);
+  enemyDraw(spawnFrequency);
   benderDraw();
   drawScoreboard();
   for (var i in myObstacles) {
@@ -48,4 +40,11 @@ function gamePlay(speed, spawnBoost, enemies) {
   if (myObstacles && myObstacles[0] && myObstacles[0].x <= 75) {
     stop();
   }
+}
+
+
+function spawnFrquencyAdjust() {
+  var step = 20;
+  var boostIncrement = Math.floor(score / step) + 4;
+  return Math.min(boostIncrement, 15); // Ensure spawnFrequency doesn't exceed 15
 }
