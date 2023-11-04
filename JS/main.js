@@ -5,7 +5,7 @@
 // the string is shifted. objects will continue to fall until key is pressed.
 //  when y = canvas height GAME OVER.
 
-$(window).resize(function() {
+$(window).resize(function () {
   if ($(window).innerWidth() >= 1200) {
     $("#controls").removeClass("btn-group");
     $("#controls").addClass("btn-group-vertical");
@@ -17,102 +17,95 @@ $(window).resize(function() {
 
 var canvas = document.getElementById("game");
 var ctx = canvas.getContext("2d");
-var strAttack = [];
-var attacker;
 var isGameStarted = false;
-var str = [];
 var myObstacles = [];
 var frames = 0;
 var score = 0;
 var topScore = 0;
-var boost = 0;
-var spawnBoost = 0;
 var marathonMode = false;
 introMusic = new sound("sounds/FuturamaStartTheme.mp3")
 intro();
 
-window.onload = function() {
+window.onload = function () {
   if ($(window).width() > 1200) {
     $("#controls").toggleClass("btn-group btn-group-vertical");
   }
-  document.getElementById("easy").onclick = function() {
+  document.getElementById("easy").onclick = function () {
     if (!isGameStarted) {
       boost = -12;
       spawnBoost = -20;
-      str = alphabet;
-      startGame();
+      startGame(null, boost, spawnBoost);
       isGameStarted = true;
     }
   };
-  document.getElementById("fast").onclick = function() {
+  document.getElementById("fast").onclick = function () {
     if (!isGameStarted) {
-      str = alphabet;
       boost = 4;
       spawnBoost = 8;
-      startGame();
+      startGame(null, boost, spawnBoost);
       isGameStarted = true;
     }
   };
-  document.getElementById("marathon").onclick = function() {
+  document.getElementById("marathon").onclick = function () {
     marathonMode = true;
     if (!isGameStarted) {
-      str = alphabet;
       boost = 3;
       spawnBoost = 3;
-      startGame();
+      startGame(null, boost, spawnBoost);
       isGameStarted = true;
     }
   };
-  document.getElementById("godly").onclick = function() {
+  document.getElementById("godly").onclick = function () {
     if (!isGameStarted) {
-      str = alphabet;
       boost = 10;
       //spawn boost < 19;
       spawnBoost = 13;
-      startGame();
+      startGame(null, boost, spawnBoost);
       isGameStarted = true;
     }
   };
-  document.getElementById("nerd").onclick = function() {
+  document.getElementById("nerd").onclick = function () {
     if (!isGameStarted) {
-      str = chars;
-      startGame();
+      const customCharacterArray = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "=", "+","|","?","_",";",":","[", "]", "{", "}", "'", "/", ",", ".", "<", ">"];
+      boost = 3;
+      spawnBoost = 3;
+      startGame(customCharacterArray, boost, spawnBoost);
       isGameStarted = true;
     }
   };
-  document.getElementById("reset").onclick = function() {
+  document.getElementById("reset").onclick = function () {
     stop();
   };
 
-// START GAME FUNCTION----------------
-  function startGame() {
+  // START GAME FUNCTION----------------
+  function startGame(enemies, speed, spawnSpeed) {
     //INITIAL STATE SETTINGS
     introMusic.stop();
-    start = new sound(starts[Math.floor(Math.random() * starts.length)]);
+    start = new sound(starts[Math.floor(Math.random() * starts.length)]); //picks a random inital sound
     // start.sound.volume=0.9;
     start.play();
     myObstacles = [];
     frames = 0;
     score = 0;
     ctx.clearRect(100, 0, canvas.width, canvas.height);
-    interval = setInterval(gamePlay, 50);
+    interval = setInterval(() => gamePlay(enemies, speed, spawnSpeed), 50);
   }
-//END OF ON LOAD--------------
+  //END OF ON LOAD--------------
 
-//work around for gamestart
-document.body.onkeyup = function(e) {
-  if (e.key == " " ||
-      e.code == "Space" ||      
-      e.keyCode == 32      
-  ) {
-    console.log('started with start button')
-    if (!isGameStarted) {
-      boost = -14;
-      spawnBoost = -20;
-      str = alphabet;
-      startGame();
-      isGameStarted = true;
+  //work around for gamestart
+  document.body.onkeyup = function (e) {
+    if (e.key == " " ||
+      e.code == "Space" ||
+      e.keyCode == 32
+    ) {
+      console.log('started with start button')
+      if (!isGameStarted) {
+        boost = -14;
+        spawnBoost = -20;
+        str = alphabet;
+        startGame();
+        isGameStarted = true;
+      }
     }
   }
-}
 };

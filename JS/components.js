@@ -43,6 +43,7 @@ function Bomb(width, height, color, x, y, char) {
 }
 
 function stop() {
+  console.log('stop has been called')
   end = new sound(ends[Math.floor(Math.random() * ends.length)]);
   end.sound.volume=0.9;
   end.play();
